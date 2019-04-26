@@ -9,30 +9,10 @@ typedef struct {
 
 int MAXSIZE = 7;
 KVPair stack[7];
-int top = -1;
-
-int isempty() {
-
-   if(top == -1)
-      return 1;
-   else
-      return 0;
-}
-
-int isfull() {
-
-   if(top == MAXSIZE)
-      return 1;
-   else
-      return 0;
-}
-
-KVPair peek() {
-   return stack[top];
-}
 
 KVPair pop(int value) {
    KVPair data;
+    data.value = -1;
    for(int i = 0; i<MAXSIZE;i++){
       if(stack[i].value == value && stack[i].used == true) {
          data = stack[i];

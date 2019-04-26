@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "pilha.c"
+#include "reg_mapper.c"
 
 void yyerror(char *c);
 int yylex(void);
@@ -18,8 +18,8 @@ int yylex(void);
 %%
 
 PROGRAMA:
-        PROGRAMA EXPRESSAO EOL { printf("Resultado: %d\n", $2);
-            
+        PROGRAMA EXPRESSAO EOL {
+            printf("Resultado: %d\n", $2);
             printstack();
         }
         |
@@ -27,12 +27,9 @@ PROGRAMA:
 
 
 EXPRESSAO:
-    INT { $$ = $1;
+    INT {
+        $$ = $1;
         KVPair token;
-        strcpy(token.key, available());
-        token.value = $1;
-        push(token);
-        printf("MOV %s,#%d\n", token.key,$1);
     }
 
     | PARENTESISABRE EXPRESSAO PARENTESISFECHA {
@@ -40,32 +37,92 @@ EXPRESSAO:
     }
     | EXPRESSAO MULT EXPRESSAO  {
         KVPair token;
-        strcpy(token.key, available());
-        push(token);
         KVPair r1 = pop($1);
         KVPair r2 = pop($3);
-        token.value = r1.value*r2.value;
+        if(r1.value == -1) {
+            strcpy(r1.key, available());
+            r1.value = $1;
+            printf("MOV %s,#%d\n", r1.key,$1);
+            push(r1);
+            r1.used = true;
+        }
+        if(r2.value == -1) {
+            strcpy(r2.key, available());
+            r2.value = $3;
+            printf("MOV %s,#%d\n", r2.key,$3);
+            push(r2);
+            r2.used = true;
+        }
+        strcpy(token.key, available());
+        token.value = $1*$3;
+        push(token);
         printf("MUL %s, %s, %s\n", token.key,r1.key,r2.key);
+        if(r1.used){
+            pop($1);
+        }
+        if(r2.used){
+            pop($3);
+        }
         $$ = $1 * $3;
     }
     | EXPRESSAO SOMA EXPRESSAO  {
         KVPair token;
+        KVPair r1 = pop($1);
+        KVPair r2 = pop($3);
+        if(r1.value == -1) {
+            strcpy(r1.key, available());
+            r1.value = $1;
+            printf("MOV %s,#%d\n", r1.key,$1);
+            push(r1);
+            r1.used = true;
+        }
+        if(r2.value == -1) {
+            strcpy(r2.key, available());
+            r2.value = $3;
+            printf("MOV %s,#%d\n", r2.key,$3);
+            push(r2);
+            r2.used = true;
+        }
         strcpy(token.key, available());
         token.value = $1+$3;
         push(token);
-        KVPair r1 = pop($1);
-        KVPair r2 = pop($3);
         printf("ADD %s, %s, %s\n", token.key,r1.key,r2.key);
+        if(r1.used){
+            pop($1);
+        }
+        if(r2.used){
+            pop($3);
+        }
         $$ = $1 + $3;
     }
     | EXPRESSAO SUB EXPRESSAO  {
         KVPair token;
+        KVPair r1 = pop($1);
+        KVPair r2 = pop($3);
+        if(r1.value == -1) {
+            strcpy(r1.key, available());
+            r1.value = $1;
+            printf("MOV %s,#%d\n", r1.key,$1);
+            push(r1);
+            r1.used = true;
+        }
+        if(r2.value == -1) {
+            strcpy(r2.key, available());
+            r2.value = $3;
+            printf("MOV %s,#%d\n", r2.key,$3);
+            push(r2);
+            r2.used = true;
+        }
         strcpy(token.key, available());
         token.value = $1-$3;
         push(token);
-        KVPair r1 = pop($1);
-        KVPair r2 = pop($3);
         printf("SUB %s, %s, %s\n", token.key,r1.key,r2.key);
+        if(r1.used){
+            pop($1);
+        }
+        if(r2.used){
+            pop($3);
+        }
         $$ = $1 - $3;
     }
     ;
