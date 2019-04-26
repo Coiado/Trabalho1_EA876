@@ -54,17 +54,21 @@ char * available() {
    return data;
 }
 
-void push(KVPair data) {
-
-   if(!isfull()) {
-      for(int i = 0; i<MAXSIZE;i++){
-         if(!stack[i].used) {
-            stack[i]=data;
-            stack[i].used = true;
-            break;
-         }
+void printstack() {
+   static char data[5];
+   for(int i = 0; i<MAXSIZE;i++){
+      if(stack[i].used) {
+          printf("%s %d\n",stack[i].key,stack[i].value);
       }
-   } else {
-      printf("Could not insert data, Stack is full.\n");
+   }
+}
+
+void push(KVPair data) {
+   for(int i = 0; i<MAXSIZE;i++){
+      if(!stack[i].used) {
+         stack[i]=data;
+         stack[i].used = true;
+         break;
+      }
    }
 }

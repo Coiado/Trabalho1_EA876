@@ -70,9 +70,9 @@
      PARENTESISABRE = 259,
      PARENTESISFECHA = 260,
      SOMA = 261,
-     EOL = 262,
+     SUB = 262,
      MULT = 263,
-     SUB = 264,
+     EOL = 264,
      DIV = 265
    };
 #endif
@@ -81,9 +81,9 @@
 #define PARENTESISABRE 259
 #define PARENTESISFECHA 260
 #define SOMA 261
-#define EOL 262
+#define SUB 262
 #define MULT 263
-#define SUB 264
+#define EOL 264
 #define DIV 265
 
 
@@ -348,16 +348,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   26
+#define YYLAST   19
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  11
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  3
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  9
+#define YYNRULES  8
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  17
+#define YYNSTATES  15
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -403,21 +403,21 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     7,     8,    10,    14,    18,    22,    26
+       0,     0,     3,     7,     8,    10,    14,    18,    22
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      12,     0,    -1,    12,    13,     7,    -1,    -1,     3,    -1,
-       4,    13,     5,    -1,    13,     8,    13,    -1,    13,    10,
-      13,    -1,    13,     6,    13,    -1,    13,     9,    13,    -1
+      12,     0,    -1,    12,    13,     9,    -1,    -1,     3,    -1,
+       4,    13,     5,    -1,    13,     8,    13,    -1,    13,     6,
+      13,    -1,    13,     7,    13,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    21,    21,    22,    27,    35,    38,    48,    60,    70
+       0,    21,    21,    25,    30,    38,    41,    51,    61
 };
 #endif
 
@@ -427,7 +427,7 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "INT", "PARENTESISABRE",
-  "PARENTESISFECHA", "SOMA", "EOL", "MULT", "SUB", "DIV", "$accept",
+  "PARENTESISFECHA", "SOMA", "SUB", "MULT", "EOL", "DIV", "$accept",
   "PROGRAMA", "EXPRESSAO", 0
 };
 #endif
@@ -445,13 +445,13 @@ static const yytype_uint16 yytoknum[] =
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    11,    12,    12,    13,    13,    13,    13,    13,    13
+       0,    11,    12,    12,    13,    13,    13,    13,    13
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     3,     0,     1,     3,     3,     3,     3,     3
+       0,     2,     3,     0,     1,     3,     3,     3,     3
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -459,8 +459,8 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       3,     0,     1,     4,     0,     0,     0,     0,     2,     0,
-       0,     0,     5,     8,     6,     9,     7
+       3,     0,     1,     4,     0,     0,     0,     0,     0,     0,
+       2,     5,     7,     8,     6
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -471,17 +471,17 @@ static const yytype_int8 yydefgoto[] =
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -10
+#define YYPACT_NINF -5
 static const yytype_int8 yypact[] =
 {
-     -10,    19,   -10,   -10,    17,     8,     3,    17,   -10,    17,
-      17,    17,   -10,    16,    -9,    -6,   -10
+      -5,     6,    -5,    -5,    -2,     5,    10,    -2,    -2,    -2,
+      -5,    -5,     0,    11,    -5
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -10,   -10,    -4
+      -5,    -5,    -4
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -491,16 +491,14 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       6,    11,     9,    13,    11,    14,    15,    16,    12,     7,
-       0,     9,    10,    11,     7,     8,     9,    10,    11,     2,
-       3,     4,     3,     4,     9,    10,    11
+       6,     3,     4,    12,    13,    14,     2,     8,     9,     3,
+       4,     7,     8,     9,    10,    11,     7,     8,     9,     9
 };
 
-static const yytype_int8 yycheck[] =
+static const yytype_uint8 yycheck[] =
 {
-       4,    10,     8,     7,    10,     9,    10,    11,     5,     6,
-      -1,     8,     9,    10,     6,     7,     8,     9,    10,     0,
-       3,     4,     3,     4,     8,     9,    10
+       4,     3,     4,     7,     8,     9,     0,     7,     8,     3,
+       4,     6,     7,     8,     9,     5,     6,     7,     8,     8
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -508,7 +506,7 @@ static const yytype_int8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,    12,     0,     3,     4,    13,    13,     6,     7,     8,
-       9,    10,     5,    13,    13,    13,    13
+       9,     5,    13,    13,    13
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1324,11 +1322,14 @@ yyreduce:
     {
         case 2:
 #line 21 "calc1.y"
-    { printf("Resultado: %d\n", (yyvsp[(2) - (3)])); }
+    { printf("Resultado: %d\n", (yyvsp[(2) - (3)]));
+            
+            printstack();
+        }
     break;
 
   case 4:
-#line 27 "calc1.y"
+#line 30 "calc1.y"
     { (yyval) = (yyvsp[(1) - (1)]);
         KVPair token;
         strcpy(token.key, available());
@@ -1339,73 +1340,57 @@ yyreduce:
     break;
 
   case 5:
-#line 35 "calc1.y"
+#line 38 "calc1.y"
     {
         (yyval) = (yyvsp[(2) - (3)]);
     }
     break;
 
   case 6:
-#line 38 "calc1.y"
+#line 41 "calc1.y"
     {
         KVPair token;
         strcpy(token.key, available());
+        push(token);
         KVPair r1 = pop((yyvsp[(1) - (3)]));
         KVPair r2 = pop((yyvsp[(3) - (3)]));
         token.value = r1.value*r2.value;
         printf("MUL %s, %s, %s\n", token.key,r1.key,r2.key);
-        push(token);
         (yyval) = (yyvsp[(1) - (3)]) * (yyvsp[(3) - (3)]);
     }
     break;
 
   case 7:
-#line 48 "calc1.y"
-    {
-        char registrador[5];
-        sprintf(registrador, "R%d", top+1);
-        KVPair r1 = pop((yyvsp[(1) - (3)]));
-        KVPair r2 = pop((yyvsp[(3) - (3)]));
-        KVPair token;
-        strcpy(token.key, registrador);
-        token.value = r1.value*r2.value;
-        printf("MUL %s, %s, %s\n", registrador,r1.key,r2.key);
-        push(token);
-        (yyval) = (yyvsp[(1) - (3)]) / (yyvsp[(3) - (3)]);
-    }
-    break;
-
-  case 8:
-#line 60 "calc1.y"
+#line 51 "calc1.y"
     {
         KVPair token;
         strcpy(token.key, available());
+        token.value = (yyvsp[(1) - (3)])+(yyvsp[(3) - (3)]);
+        push(token);
         KVPair r1 = pop((yyvsp[(1) - (3)]));
         KVPair r2 = pop((yyvsp[(3) - (3)]));
-        token.value = r1.value+r2.value;
         printf("ADD %s, %s, %s\n", token.key,r1.key,r2.key);
-        push(token);
         (yyval) = (yyvsp[(1) - (3)]) + (yyvsp[(3) - (3)]);
     }
     break;
 
-  case 9:
-#line 70 "calc1.y"
+  case 8:
+#line 61 "calc1.y"
     {
         KVPair token;
         strcpy(token.key, available());
+        token.value = (yyvsp[(1) - (3)])-(yyvsp[(3) - (3)]);
+        push(token);
         KVPair r1 = pop((yyvsp[(1) - (3)]));
         KVPair r2 = pop((yyvsp[(3) - (3)]));
-        token.value = r1.value-r2.value;
         printf("SUB %s, %s, %s\n", token.key,r1.key,r2.key);
-        push(token);
         (yyval) = (yyvsp[(1) - (3)]) - (yyvsp[(3) - (3)]);
     }
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1409 "y.tab.c"
+#line 1394 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1619,7 +1604,7 @@ yyreturn:
 }
 
 
-#line 82 "calc1.y"
+#line 73 "calc1.y"
 
 
 void yyerror(char *s) {

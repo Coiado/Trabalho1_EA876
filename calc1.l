@@ -26,9 +26,6 @@ void yyerror(char *);
           return MULT;
         }
 
-[/]     {
-          return DIV;
-        }
 [\(]     {
           return PARENTESISABRE;
         }

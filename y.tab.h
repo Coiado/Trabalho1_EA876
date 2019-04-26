@@ -43,9 +43,9 @@
      PARENTESISABRE = 259,
      PARENTESISFECHA = 260,
      SOMA = 261,
-     EOL = 262,
+     SUB = 262,
      MULT = 263,
-     SUB = 264,
+     EOL = 264,
      DIV = 265
    };
 #endif
@@ -54,9 +54,9 @@
 #define PARENTESISABRE 259
 #define PARENTESISFECHA 260
 #define SOMA 261
-#define EOL 262
+#define SUB 262
 #define MULT 263
-#define SUB 264
+#define EOL 264
 #define DIV 265
 
 
