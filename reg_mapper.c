@@ -23,6 +23,18 @@ KVPair pop(int value) {
    return data;
 }
 
+KVPair get(int value) {
+    KVPair data;
+    data.value = -1;
+    for(int i = 0; i<MAXSIZE;i++){
+        if(stack[i].value == value && stack[i].used == true) {
+            data = stack[i];
+            break;
+        }
+    }
+    return data;
+}
+
 char * available() {
    static char data[5];
    for(int i = 0; i<MAXSIZE;i++){
