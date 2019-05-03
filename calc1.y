@@ -60,6 +60,7 @@ EXPRESSAO:
         }
         strcpy(token.key, available());
         token.value = $1*$3;
+        printf("            MOV %s,#0\n", token.key);
         push(token);
         printf("            CMP %s,#0\n", r1.key);
         printf("            BEQ zero%d\n", mult);
@@ -67,7 +68,7 @@ EXPRESSAO:
         printf("            BEQ zero%d\n", mult);
         printf("comparacao%d CMP %s,#0\n", mult, r1.key);
         printf("            BEQ fim%d\n", mult);
-        printf("            ADD %s, %s, %s\n", token.key,r2.key,r1.key);
+        printf("            ADD %s, %s, %s\n", token.key,token.key,r2.key);
         printf("            SUB %s, %s, #1\n", r1.key,r1.key);
         printf("            B comparacao%d\n", mult);
         printf("zero%d       MOV %s,#0\n", mult, token.key);
