@@ -64,3 +64,10 @@ void push(KVPair data) {
       }
    }
 }
+
+void emptystack() {
+    for(int i = 0; i<MAXSIZE;i++){
+        stack[i].value=0;
+        stack[i].used = false;
+    }
+}

@@ -22,6 +22,7 @@ PROGRAMA:
         PROGRAMA EXPRESSAO EOL {
             printf("Resultado: %d\n", $2);
             printstack();
+            emptystack();
         }
         |
         ;
@@ -35,6 +36,9 @@ EXPRESSAO:
 
     | PARENTESISABRE EXPRESSAO PARENTESISFECHA {
         $$ = $2;
+    }
+    | SUB INT {
+        $$ = -1*$2;
     }
     | EXPRESSAO MULT EXPRESSAO  {
         KVPair token;
@@ -84,21 +88,21 @@ EXPRESSAO:
         if(r1.value == -1) {
             strcpy(r1.key, available());
             r1.value = $1;
-            printf("             MOV %s,#%d\n", r1.key,$1);
+            printf("            MOV %s,#%d\n", r1.key,$1);
             push(r1);
             r1.used = true;
         }
         if(r2.value == -1) {
             strcpy(r2.key, available());
             r2.value = $3;
-            printf("             MOV %s,#%d\n", r2.key,$3);
+            printf("            MOV %s,#%d\n", r2.key,$3);
             push(r2);
             r2.used = true;
         }
         strcpy(token.key, available());
         token.value = $1+$3;
         push(token);
-        printf("             ADD %s, %s, %s\n", token.key,r1.key,r2.key);
+        printf("            ADD %s, %s, %s\n", token.key,r1.key,r2.key);
         if(r1.used){
             pop($1);
         }
@@ -114,21 +118,21 @@ EXPRESSAO:
         if(r1.value == -1) {
             strcpy(r1.key, available());
             r1.value = $1;
-            printf("             MOV %s,#%d\n", r1.key,$1);
+            printf("            MOV %s,#%d\n", r1.key,$1);
             push(r1);
             r1.used = true;
         }
         if(r2.value == -1) {
             strcpy(r2.key, available());
             r2.value = $3;
-            printf("             MOV %s,#%d\n", r2.key,$3);
+            printf("            MOV %s,#%d\n", r2.key,$3);
             push(r2);
             r2.used = true;
         }
         strcpy(token.key, available());
         token.value = $1-$3;
         push(token);
-        printf("             SUB %s, %s, %s\n", token.key,r1.key,r2.key);
+        printf("            SUB %s, %s, %s\n", token.key,r1.key,r2.key);
         if(r1.used){
             pop($1);
         }
