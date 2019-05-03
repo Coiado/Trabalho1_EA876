@@ -1,4 +1,11 @@
 
+TARGET = ./main
+
+# Macros para teste
+BASH = sh
+TEST_SCRIPT = test.sh
+VERBOSE ?= 1
+
 
 all: lex.yy.c y.tab.c
 	gcc -omain lex.yy.c y.tab.c -ll
@@ -11,3 +18,6 @@ y.tab.c:calc1.y
 
 clean:
 	rm y.tab.c lex.yy.c y.tab.h main
+
+test:all
+	$(BASH) $(TEST_SCRIPT) $(TARGET) $(VERBOSE)
