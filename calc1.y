@@ -80,16 +80,19 @@ EXPRESSAO:
         strcpy(sinal.key, available());
         sinal.value = 0;
         push(sinal);
+        printf("            MOV %s, #0\n", sinal.key);
         printf("            CMP %s, #0\n", r1.key);
         printf("            BEQ zero%d\n", mult);
         printf("            CMP %s, #0\n", r2.key);
         printf("            BEQ zero%d\n", mult);
         printf("            CMP %s, #0\n", r1.key);
-        printf("            ADDLT %s, #1\n", sinal.key);
+        printf("            ADDLT %s, %s, #1\n", sinal.key,sinal.key);
         printf("            MVNLT %s, %s\n", r1.key, r1.key);
+        printf("            ADDLT %s, %s, #1\n", r1.key,r1.key);
         printf("            CMP %s, #0\n", r2.key);
-        printf("            ADDLT %s, #1\n", sinal.key);
+        printf("            ADDLT %s, %s, #1\n", sinal.key,sinal.key);
         printf("            MVNLT %s, %s\n", r2.key, r2.key);
+        printf("            ADDLT %s, %s, #1\n", r2.key, r2.key);
         printf("comparacao%d CMP %s, #0\n", mult, r1.key);
         printf("            BEQ fim%d\n", mult);
         printf("            ADD %s, %s, %s\n", token.key,token.key,r2.key);
@@ -97,6 +100,7 @@ EXPRESSAO:
         printf("            B comparacao%d\n", mult);
         printf("zero%d       MOV %s, #0\n", mult, token.key);
         printf("fim%d        CMP %s, #1\n", mult, sinal.key);
+        printf("            SUBEQ %s, %s, #1\n", token.key, token.key);
         printf("            MVNEQ %s, %s\n", token.key, token.key);
         mult++;
         if(r1.used){
