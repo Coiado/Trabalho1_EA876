@@ -1,0 +1,34 @@
+            MOV R0, #3
+            MOV R1, #3
+            ADD R2, R0, R1
+            MOV R0, #5
+            MOV R3, #0
+            MOV R1, #0
+            CMP R2, #0
+            BEQ zero0
+            CMP R0, #0
+            BEQ zero0
+            CMP R2, #0
+            ADDLT R3, R3, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+            CMP R0, #0
+            ADDLT R3, R3, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+comparacao0 CMP R2, #0
+            BEQ fim0
+            ADD R1, R1, R0
+            SUB R2, R2, #1
+            B comparacao0
+zero0       MOV R1, #0
+fim0        CMP R3, #1
+            SUBEQ R1, R1, #1
+            MVNEQ R1, R1
+            MOV R0, #9
+            SUB R2, R0, R1
+            MOV R0, #-3
+            ADD R1, R0, R2
+            MOV R0, R1
+Registradores resultantes:
+R0 -24

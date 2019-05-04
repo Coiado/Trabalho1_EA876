@@ -34,8 +34,9 @@ PROGRAMA:
                     push(result);
                 }
             }
+            
+            printf("Registradores resultantes:\n");
             printstack();
-            printf("Resultado: %d\n", $2);
             emptystack();
         }
         |
@@ -81,6 +82,7 @@ EXPRESSAO:
         sinal.value = 0;
         push(sinal);
         printf("            MOV %s, #0\n", sinal.key);
+        printf("            MOV %s, #0\n", token.key);
         printf("            CMP %s, #0\n", r1.key);
         printf("            BEQ zero%d\n", mult);
         printf("            CMP %s, #0\n", r2.key);

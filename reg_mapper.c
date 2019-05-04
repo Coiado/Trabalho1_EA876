@@ -7,8 +7,8 @@ typedef struct {
     bool used;
 } KVPair;
 
-int MAXSIZE = 7;
-KVPair stack[7];
+int MAXSIZE = 12;
+KVPair stack[12];
 
 KVPair pop(int value) {
    KVPair data;

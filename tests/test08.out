@@ -1,0 +1,681 @@
+            MOV R0, #2
+            MOV R1, #3
+            MOV R3, #0
+            MOV R2, #0
+            CMP R0, #0
+            BEQ zero0
+            CMP R1, #0
+            BEQ zero0
+            CMP R0, #0
+            ADDLT R3, R3, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R1, #0
+            ADDLT R3, R3, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+comparacao0 CMP R0, #0
+            BEQ fim0
+            ADD R2, R2, R1
+            SUB R0, R0, #1
+            B comparacao0
+zero0       MOV R2, #0
+fim0        CMP R3, #1
+            SUBEQ R2, R2, #1
+            MVNEQ R2, R2
+            MOV R0, #23
+            MOV R1, #4
+            MOV R4, #0
+            MOV R3, #0
+            CMP R0, #0
+            BEQ zero1
+            CMP R1, #0
+            BEQ zero1
+            CMP R0, #0
+            ADDLT R4, R4, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R1, #0
+            ADDLT R4, R4, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+comparacao1 CMP R0, #0
+            BEQ fim1
+            ADD R3, R3, R1
+            SUB R0, R0, #1
+            B comparacao1
+zero1       MOV R3, #0
+fim1        CMP R4, #1
+            SUBEQ R3, R3, #1
+            MVNEQ R3, R3
+            MOV R0, #2
+            MOV R1, #1
+            SUB R4, R0, R1
+            MOV R0, #4
+            ADD R1, R0, R4
+            MOV R0, #2
+            MOV R5, #0
+            MOV R4, #0
+            CMP R0, #0
+            BEQ zero2
+            CMP R1, #0
+            BEQ zero2
+            CMP R0, #0
+            ADDLT R5, R5, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R1, #0
+            ADDLT R5, R5, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+comparacao2 CMP R0, #0
+            BEQ fim2
+            ADD R4, R4, R1
+            SUB R0, R0, #1
+            B comparacao2
+zero2       MOV R4, #0
+fim2        CMP R5, #1
+            SUBEQ R4, R4, #1
+            MVNEQ R4, R4
+            MOV R0, #3
+            MOV R5, #0
+            MOV R1, #0
+            CMP R4, #0
+            BEQ zero3
+            CMP R0, #0
+            BEQ zero3
+            CMP R4, #0
+            ADDLT R5, R5, #1
+            MVNLT R4, R4
+            ADDLT R4, R4, #1
+            CMP R0, #0
+            ADDLT R5, R5, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+comparacao3 CMP R4, #0
+            BEQ fim3
+            ADD R1, R1, R0
+            SUB R4, R4, #1
+            B comparacao3
+zero3       MOV R1, #0
+fim3        CMP R5, #1
+            SUBEQ R1, R1, #1
+            MVNEQ R1, R1
+            ADD R0, R3, R1
+            MOV R1, #1
+            SUB R3, R0, R1
+            MOV R0, #2
+            MOV R1, #3
+            MOV R5, #0
+            MOV R4, #0
+            CMP R0, #0
+            BEQ zero4
+            CMP R1, #0
+            BEQ zero4
+            CMP R0, #0
+            ADDLT R5, R5, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R1, #0
+            ADDLT R5, R5, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+comparacao4 CMP R0, #0
+            BEQ fim4
+            ADD R4, R4, R1
+            SUB R0, R0, #1
+            B comparacao4
+zero4       MOV R4, #0
+fim4        CMP R5, #1
+            SUBEQ R4, R4, #1
+            MVNEQ R4, R4
+            MOV R0, #23
+            MOV R1, #4
+            MOV R6, #0
+            MOV R5, #0
+            CMP R0, #0
+            BEQ zero5
+            CMP R1, #0
+            BEQ zero5
+            CMP R0, #0
+            ADDLT R6, R6, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R1, #0
+            ADDLT R6, R6, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+comparacao5 CMP R0, #0
+            BEQ fim5
+            ADD R5, R5, R1
+            SUB R0, R0, #1
+            B comparacao5
+zero5       MOV R5, #0
+fim5        CMP R6, #1
+            SUBEQ R5, R5, #1
+            MVNEQ R5, R5
+            MOV R0, #2
+            MOV R1, #1
+            SUB R6, R0, R1
+            MOV R0, #4
+            ADD R1, R0, R6
+            MOV R0, #2
+            MOV R7, #0
+            MOV R6, #0
+            CMP R0, #0
+            BEQ zero6
+            CMP R1, #0
+            BEQ zero6
+            CMP R0, #0
+            ADDLT R7, R7, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R1, #0
+            ADDLT R7, R7, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+comparacao6 CMP R0, #0
+            BEQ fim6
+            ADD R6, R6, R1
+            SUB R0, R0, #1
+            B comparacao6
+zero6       MOV R6, #0
+fim6        CMP R7, #1
+            SUBEQ R6, R6, #1
+            MVNEQ R6, R6
+            MOV R0, #3
+            MOV R7, #0
+            MOV R1, #0
+            CMP R6, #0
+            BEQ zero7
+            CMP R0, #0
+            BEQ zero7
+            CMP R6, #0
+            ADDLT R7, R7, #1
+            MVNLT R6, R6
+            ADDLT R6, R6, #1
+            CMP R0, #0
+            ADDLT R7, R7, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+comparacao7 CMP R6, #0
+            BEQ fim7
+            ADD R1, R1, R0
+            SUB R6, R6, #1
+            B comparacao7
+zero7       MOV R1, #0
+fim7        CMP R7, #1
+            SUBEQ R1, R1, #1
+            MVNEQ R1, R1
+            ADD R0, R5, R1
+            MOV R1, #1
+            SUB R5, R0, R1
+            MOV R0, #2
+            MOV R1, #3
+            SUB R6, R0, R1
+            MOV R0, #-1
+            SUB R1, R3, R0
+            ADD R0, R2, R1
+            MOV R1, #4
+            MOV R2, #3
+            MOV R7, #0
+            MOV R3, #0
+            CMP R1, #0
+            BEQ zero8
+            CMP R2, #0
+            BEQ zero8
+            CMP R1, #0
+            ADDLT R7, R7, #1
+            MVNLT R1, R1
+            ADDLT R1, R1, #1
+            CMP R2, #0
+            ADDLT R7, R7, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao8 CMP R1, #0
+            BEQ fim8
+            ADD R3, R3, R2
+            SUB R1, R1, #1
+            B comparacao8
+zero8       MOV R3, #0
+fim8        CMP R7, #1
+            SUBEQ R3, R3, #1
+            MVNEQ R3, R3
+            ADD R1, R0, R3
+            SUB R0, R5, R1
+            ADD R1, R4, R0
+            MOV R0, #2
+            MOV R2, #3
+            MOV R4, #0
+            MOV R3, #0
+            CMP R0, #0
+            BEQ zero9
+            CMP R2, #0
+            BEQ zero9
+            CMP R0, #0
+            ADDLT R4, R4, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R4, R4, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao9 CMP R0, #0
+            BEQ fim9
+            ADD R3, R3, R2
+            SUB R0, R0, #1
+            B comparacao9
+zero9       MOV R3, #0
+fim9        CMP R4, #1
+            SUBEQ R3, R3, #1
+            MVNEQ R3, R3
+            MOV R0, #23
+            MOV R2, #4
+            MOV R5, #0
+            MOV R4, #0
+            CMP R0, #0
+            BEQ zero10
+            CMP R2, #0
+            BEQ zero10
+            CMP R0, #0
+            ADDLT R5, R5, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R5, R5, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao10 CMP R0, #0
+            BEQ fim10
+            ADD R4, R4, R2
+            SUB R0, R0, #1
+            B comparacao10
+zero10       MOV R4, #0
+fim10        CMP R5, #1
+            SUBEQ R4, R4, #1
+            MVNEQ R4, R4
+            MOV R0, #2
+            MOV R2, #3
+            MOV R7, #0
+            MOV R5, #0
+            CMP R0, #0
+            BEQ zero11
+            CMP R2, #0
+            BEQ zero11
+            CMP R0, #0
+            ADDLT R7, R7, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R7, R7, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao11 CMP R0, #0
+            BEQ fim11
+            ADD R5, R5, R2
+            SUB R0, R0, #1
+            B comparacao11
+zero11       MOV R5, #0
+fim11        CMP R7, #1
+            SUBEQ R5, R5, #1
+            MVNEQ R5, R5
+            MOV R0, #23
+            MOV R2, #4
+            MOV R8, #0
+            MOV R7, #0
+            CMP R0, #0
+            BEQ zero12
+            CMP R2, #0
+            BEQ zero12
+            CMP R0, #0
+            ADDLT R8, R8, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R8, R8, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao12 CMP R0, #0
+            BEQ fim12
+            ADD R7, R7, R2
+            SUB R0, R0, #1
+            B comparacao12
+zero12       MOV R7, #0
+fim12        CMP R8, #1
+            SUBEQ R7, R7, #1
+            MVNEQ R7, R7
+            MOV R0, #2
+            MOV R2, #3
+            MOV R9, #0
+            MOV R8, #0
+            CMP R0, #0
+            BEQ zero13
+            CMP R2, #0
+            BEQ zero13
+            CMP R0, #0
+            ADDLT R9, R9, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R9, R9, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao13 CMP R0, #0
+            BEQ fim13
+            ADD R8, R8, R2
+            SUB R0, R0, #1
+            B comparacao13
+zero13       MOV R8, #0
+fim13        CMP R9, #1
+            SUBEQ R8, R8, #1
+            MVNEQ R8, R8
+            MOV R0, #23
+            MOV R2, #4
+            MOV R10, #0
+            MOV R9, #0
+            CMP R0, #0
+            BEQ zero14
+            CMP R2, #0
+            BEQ zero14
+            CMP R0, #0
+            ADDLT R10, R10, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R10, R10, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao14 CMP R0, #0
+            BEQ fim14
+            ADD R9, R9, R2
+            SUB R0, R0, #1
+            B comparacao14
+zero14       MOV R9, #0
+fim14        CMP R10, #1
+            SUBEQ R9, R9, #1
+            MVNEQ R9, R9
+            MOV R0, #2
+            MOV R2, #1
+            SUB R10, R0, R2
+            MOV R0, #4
+            ADD R2, R0, R10
+            MOV R0, #2
+            MOV R11, #0
+            MOV R10, #0
+            CMP R0, #0
+            BEQ zero15
+            CMP R2, #0
+            BEQ zero15
+            CMP R0, #0
+            ADDLT R11, R11, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R11, R11, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao15 CMP R0, #0
+            BEQ fim15
+            ADD R10, R10, R2
+            SUB R0, R0, #1
+            B comparacao15
+zero15       MOV R10, #0
+fim15        CMP R11, #1
+            SUBEQ R10, R10, #1
+            MVNEQ R10, R10
+            MOV R0, #3
+            MOV R11, #0
+            MOV R2, #0
+            CMP R10, #0
+            BEQ zero16
+            CMP R0, #0
+            BEQ zero16
+            CMP R10, #0
+            ADDLT R11, R11, #1
+            MVNLT R10, R10
+            ADDLT R10, R10, #1
+            CMP R0, #0
+            ADDLT R11, R11, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+comparacao16 CMP R10, #0
+            BEQ fim16
+            ADD R2, R2, R0
+            SUB R10, R10, #1
+            B comparacao16
+zero16       MOV R2, #0
+fim16        CMP R11, #1
+            SUBEQ R2, R2, #1
+            MVNEQ R2, R2
+            ADD R0, R4, R2
+            MOV R2, #1
+            SUB R4, R0, R2
+            MOV R0, #2
+            MOV R2, #3
+            SUB R10, R0, R2
+            MOV R0, #-1
+            SUB R2, R4, R0
+            ADD R0, R3, R2
+            MOV R2, #4
+            MOV R3, #3
+            MOV R11, #0
+            MOV R4, #0
+            CMP R2, #0
+            BEQ zero17
+            CMP R3, #0
+            BEQ zero17
+            CMP R2, #0
+            ADDLT R11, R11, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+            CMP R3, #0
+            ADDLT R11, R11, #1
+            MVNLT R3, R3
+            ADDLT R3, R3, #1
+comparacao17 CMP R2, #0
+            BEQ fim17
+            ADD R4, R4, R3
+            SUB R2, R2, #1
+            B comparacao17
+zero17       MOV R4, #0
+fim17        CMP R11, #1
+            SUBEQ R4, R4, #1
+            MVNEQ R4, R4
+            ADD R2, R0, R4
+            MOV R0, #2
+            MOV R4, #0
+            MOV R3, #0
+            CMP R0, #0
+            BEQ zero18
+            CMP R2, #0
+            BEQ zero18
+            CMP R0, #0
+            ADDLT R4, R4, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R4, R4, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao18 CMP R0, #0
+            BEQ fim18
+            ADD R3, R3, R2
+            SUB R0, R0, #1
+            B comparacao18
+zero18       MOV R3, #0
+fim18        CMP R4, #1
+            SUBEQ R3, R3, #1
+            MVNEQ R3, R3
+            MOV R0, #3
+            MOV R4, #0
+            MOV R2, #0
+            CMP R3, #0
+            BEQ zero19
+            CMP R0, #0
+            BEQ zero19
+            CMP R3, #0
+            ADDLT R4, R4, #1
+            MVNLT R3, R3
+            ADDLT R3, R3, #1
+            CMP R0, #0
+            ADDLT R4, R4, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+comparacao19 CMP R3, #0
+            BEQ fim19
+            ADD R2, R2, R0
+            SUB R3, R3, #1
+            B comparacao19
+zero19       MOV R2, #0
+fim19        CMP R4, #1
+            SUBEQ R2, R2, #1
+            MVNEQ R2, R2
+            ADD R0, R7, R2
+            MOV R2, #1
+            SUB R3, R0, R2
+            MOV R0, #2
+            MOV R2, #3
+            SUB R4, R0, R2
+            MOV R0, #-1
+            SUB R2, R3, R0
+            ADD R0, R5, R2
+            MOV R2, #4
+            MOV R3, #3
+            MOV R7, #0
+            MOV R5, #0
+            CMP R2, #0
+            BEQ zero20
+            CMP R3, #0
+            BEQ zero20
+            CMP R2, #0
+            ADDLT R7, R7, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+            CMP R3, #0
+            ADDLT R7, R7, #1
+            MVNLT R3, R3
+            ADDLT R3, R3, #1
+comparacao20 CMP R2, #0
+            BEQ fim20
+            ADD R5, R5, R3
+            SUB R2, R2, #1
+            B comparacao20
+zero20       MOV R5, #0
+fim20        CMP R7, #1
+            SUBEQ R5, R5, #1
+            MVNEQ R5, R5
+            ADD R2, R0, R5
+            MOV R0, #2
+            MOV R5, #0
+            MOV R3, #0
+            CMP R0, #0
+            BEQ zero21
+            CMP R2, #0
+            BEQ zero21
+            CMP R0, #0
+            ADDLT R5, R5, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R5, R5, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao21 CMP R0, #0
+            BEQ fim21
+            ADD R3, R3, R2
+            SUB R0, R0, #1
+            B comparacao21
+zero21       MOV R3, #0
+fim21        CMP R5, #1
+            SUBEQ R3, R3, #1
+            MVNEQ R3, R3
+            MOV R0, #3
+            MOV R5, #0
+            MOV R2, #0
+            CMP R3, #0
+            BEQ zero22
+            CMP R0, #0
+            BEQ zero22
+            CMP R3, #0
+            ADDLT R5, R5, #1
+            MVNLT R3, R3
+            ADDLT R3, R3, #1
+            CMP R0, #0
+            ADDLT R5, R5, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+comparacao22 CMP R3, #0
+            BEQ fim22
+            ADD R2, R2, R0
+            SUB R3, R3, #1
+            B comparacao22
+zero22       MOV R2, #0
+fim22        CMP R5, #1
+            SUBEQ R2, R2, #1
+            MVNEQ R2, R2
+            ADD R0, R9, R2
+            MOV R2, #1
+            SUB R3, R0, R2
+            MOV R0, #2
+            MOV R2, #3
+            SUB R5, R0, R2
+            MOV R0, #-1
+            SUB R2, R3, R0
+            ADD R0, R8, R2
+            MOV R2, #4
+            MOV R3, #3
+            MOV R8, #0
+            MOV R7, #0
+            CMP R2, #0
+            BEQ zero23
+            CMP R3, #0
+            BEQ zero23
+            CMP R2, #0
+            ADDLT R8, R8, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+            CMP R3, #0
+            ADDLT R8, R8, #1
+            MVNLT R3, R3
+            ADDLT R3, R3, #1
+comparacao23 CMP R2, #0
+            BEQ fim23
+            ADD R7, R7, R3
+            SUB R2, R2, #1
+            B comparacao23
+zero23       MOV R7, #0
+fim23        CMP R8, #1
+            SUBEQ R7, R7, #1
+            MVNEQ R7, R7
+            ADD R2, R0, R7
+            MOV R0, #4
+            MOV R7, #0
+            MOV R3, #0
+            CMP R0, #0
+            BEQ zero24
+            CMP R2, #0
+            BEQ zero24
+            CMP R0, #0
+            ADDLT R7, R7, #1
+            MVNLT R0, R0
+            ADDLT R0, R0, #1
+            CMP R2, #0
+            ADDLT R7, R7, #1
+            MVNLT R2, R2
+            ADDLT R2, R2, #1
+comparacao24 CMP R0, #0
+            BEQ fim24
+            ADD R3, R3, R2
+            SUB R0, R0, #1
+            B comparacao24
+zero24       MOV R3, #0
+fim24        CMP R7, #1
+            SUBEQ R3, R3, #1
+            MVNEQ R3, R3
+            ADD R0, R1, R3
+Registradores resultantes:
+R0 23227
+R4 -1
+R5 -1
+R6 -1
+R10 -1
